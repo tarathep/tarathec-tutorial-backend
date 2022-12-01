@@ -21,8 +21,9 @@ jobs:
       uses: zaproxy/action-full-scan@v0.4.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        target: "https://${{ github.event_name == 'repository_dispatch' && 'sit' || github.event.inputs.env }}-tarathec-web.azure101.ml/api/tutorials"
-            
+        # target: "https://${{ github.event_name == 'repository_dispatch' && 'sit' || github.event.inputs.env }}-tarathec-web.azure101.ml/api/tutorials"
+        target: "https://app-tarathec-az-usw3-${{ github.event_name == 'repository_dispatch' && 'sit' || github.event.inputs.env }}-001.azurewebsites.net/api/tutorials"
+
     - name: Create sarif file from zaproxy results
       uses: SvanBoxel/zaproxy-to-ghas@main
     
