@@ -90,6 +90,6 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
-        repository: corp-ais/tarathec-pipeline
+        repository: tarathep/tarathec-pipeline
         event-type: tarathec-tutorial-backend-cd-dev
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
